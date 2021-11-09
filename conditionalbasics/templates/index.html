@@ -1,0 +1,11 @@
+<h1>Hi alllllll</h1>
+
+
+
+{% for feature in features %}
+{% if feature.is_true == True %}
+<h1>{{feature.name}}</h1>
+<h1>{{feature.id}}</h1>
+<h1>{{feature.details}}</h1>
+{% endif %}
+{% endfor %}
