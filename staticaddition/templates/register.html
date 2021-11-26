@@ -1,20 +1,33 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
 
+{% block content %}
 <div class="container py-5">
 	<h1>Register</h1>
 	<form method="POST">
 		{% csrf_token %}
-		{{ register_form }}                    
+        <div>
+		{{ register_form|crispy }}                    
 		<button class="btn btn-primary" type="submit">Register</button>
-	</form>
-	<p class="text-center">If you already have an account, <a href="login">login</a> instead.</p>
+        </div>
+    </form>
+    {% if user.is_authenticated %}
+    {% for message in messages %}
+    <h3>{{ message }} {{ user.username }} </h3>
+    {% endfor %}
+    {% else %}
+    {% for message in messages %}
+    <h3>{{ message }} </h3>
+    {% endfor %}
+    <p class="text-center">If you already have an account, <a href="login">login</a> instead.</p>
+    {% endif %}
+
+    <style>
+        h3{
+    
+            color: red;
+        }
+    </style>
+
 </div>
-{% for message in messages %}
-<h3>{{message }}</h3>
-
-{% endfor %}
-<style>
-    h3{
-
-        color: red;
-    }
-</style>
+{% endblock %}

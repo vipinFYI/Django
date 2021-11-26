@@ -12,7 +12,9 @@ def index(request):
 
 
 def register(request):
-
+    if request.user.is_authenticated:
+        messages.info(request,'You are already logged in')
+        
     if request.method == 'POST':
         form = NewUserForm(request.POST)
         if form.is_valid():

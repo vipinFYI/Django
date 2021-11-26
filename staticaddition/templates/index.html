@@ -1,15 +1,11 @@
+{% extends 'base.html' %}
 
-<h1>Hi alllllll</h1>
-{% if user.is_authenticated %}
-    <p>You are logged in as {{ user.username }}</p>
-{% else %}
-    <p>You are not logged in.</p>
-{% endif %}
-
-
+{% block content %}
 
 {% if user.is_authenticated %}
-<li><a href="logout">logout</a></li>
-{% else %}
-<li><a href="login">login</a></li>
-{% endif %}
+                <h2 class="animate__animated animate__fadeInDown">Welcome  {{ user.username|title  }}</h2>
+                {% else %}
+                <h2 class="animate__animated animate__fadeInDown">Please<span> Login</span></h2>
+                <a href="login" class="btn-get-started animate__animated animate__fadeInUp scrollto">login</a>
+  {% endif %}
+{% endblock content %}
