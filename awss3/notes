@@ -39,9 +39,9 @@ installing django-storages(make process easier) -pip install django-storages
 
 """
 #AWS SETTINGS 
-AWS_ACCESS_KEY_ID = 'AKIA2SXAMDWRDKVC52UL'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'djangobucket1234'
+AWS_ACCESS_KEY_ID = '######'
+AWS_SECRET_ACCESS_KEY = '##############
+AWS_STORAGE_BUCKET_NAME = '###############'
 #aws acess acl
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
