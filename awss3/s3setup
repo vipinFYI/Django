@@ -1,0 +1,9 @@
+create new bucket
+give name-untick block all public access
+create bucket
+creat user grop for s3bucket- programatic access
+create policy
+add policy to group
+add user to group
+download csv file of security key
+
