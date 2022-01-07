@@ -1,0 +1,12 @@
+py -m venv venv
+venv\Scripts\activate
+pip install django
+django-admin startproject core .
+creating a light weight app - in core views.py
+pip freeze > requirements.txt
+create Dockerfile - text document to run the Dockercontainer
+docker build --tag python-django . -----to build new image
+docker run --publish 8000:8000 python-django
+
+
+
