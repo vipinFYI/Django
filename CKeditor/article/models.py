@@ -2,6 +2,7 @@ from importlib.resources import contents
 from turtle import title
 from django.db import models
 from django.utils.text import slugify
+from taggit.managers import TaggableManager
 
 # Create your models here.
 
@@ -21,6 +22,7 @@ class Article(models.Model):
     content2 = RichTextUploadingField(blank=True, null=True,config_name = 'special')
     body = models.TextField(blank=True, null=True)
     order = models.IntegerField(blank= True, null=True)
+    tags = TaggableManager()
 
     slug = models.SlugField(default='', blank=True)
 
